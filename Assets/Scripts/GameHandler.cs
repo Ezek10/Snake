@@ -14,8 +14,10 @@ public class GameHandler : MonoBehaviour
     private GameObject serpiente;
     private float gridMoveTimer;
     private float gridMoveTimerMax;
+    public GameObject pantallaDePausa;
     private List<IOnTickListener> listeners = new List<IOnTickListener>();
     private Queue<Direction> keyQueue = new Queue<Direction>();
+    private bool gamePause = false;
     void Start()
     {
         _instance = this;
@@ -23,6 +25,7 @@ public class GameHandler : MonoBehaviour
         keyQueue.Enqueue(Direction.Right);
         gridMoveTimerMax = .10f;
         gridMoveTimer = gridMoveTimerMax;
+        
     }
     private void Initiate()
     {
@@ -68,10 +71,28 @@ public class GameHandler : MonoBehaviour
             serpiente = Instantiate(snake, position, rotation);
             keyQueue.Enqueue(Direction.Right);
         }
-
-        HandleKey();
-        TimeHandle();
+        if (PauseHandle())
+            {
+                HandleKey();
+                TimeHandle();
+            }
     }
+
+    public void Musica(bool Musica){
+        gameObject.GetComponent<AudioSource>().enabled = Musica;
+    }
+
+    private bool PauseHandle()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                pantallaDePausa.SetActive(!pantallaDePausa.active);
+                gamePause = !gamePause;
+                gameObject.GetComponent<AudioSource>().mute = !gameObject.GetComponent<AudioSource>().mute;
+            }
+        return !gamePause;
+    }
+
     private void TimeHandle()
     {
         gridMoveTimer += Time.deltaTime;
