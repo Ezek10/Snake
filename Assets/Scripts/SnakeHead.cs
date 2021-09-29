@@ -12,15 +12,14 @@ public class SnakeHead : MonoBehaviour
         snake = gameObject.transform.parent.gameObject;
         
     }
-    private void OnTriggerExit2D(Collider2D collision) {
-        
-        if (collision.transform.CompareTag("MainCamera") || collision.transform.CompareTag("Cuerpo"))
-            snake.GetComponent<Snake>().Die(); 
 
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.transform.CompareTag("Cuerpo"))
+        {
+            snake.GetComponent<Snake>().Die();
+        }
+        
         if (collision.transform.tag == "comida")
         {
             snake.GetComponent<Snake>().Eat(collision.transform.gameObject);

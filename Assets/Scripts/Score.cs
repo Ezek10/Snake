@@ -11,6 +11,7 @@ public class Score : MonoBehaviour
     private int maxScore;
     public Text texto;
     private int record;
+    public int goal = 3;
     void Start()
     {
         texto.text = "Score: " + score.ToString() + "\nMaxScore: " + maxScore.ToString();
@@ -27,6 +28,9 @@ public class Score : MonoBehaviour
             PlayerPrefs.SetInt("record",maxScore);
         }
         texto.text = "Score: " + score.ToString() + "\nMaxScore: " + maxScore.ToString();
+        if (score == goal)
+            GetComponent<GameHandler>().GoalReached();
+            
     }
     public void DeleteScore()
     {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,12 +12,16 @@ public class GameHandler : MonoBehaviour
     private GameObject conejoVivo;
     public GameObject comidaConteiner;
     private GameObject serpiente;
+    public GameObject puerta;
     private float gridMoveTimer;
     private float gridMoveTimerMax;
     public GameObject pantallaDePausa;
     private List<IOnTickListener> listeners = new List<IOnTickListener>();
     private Queue<Direction> keyQueue = new Queue<Direction>();
     private bool gamePause = false;
+    public int cantidadDeComida = 1;
+    private Collider2D debug;
+    private bool finish = false;
     void Start()
     {
         _instance = this;
@@ -48,18 +52,17 @@ public class GameHandler : MonoBehaviour
         //if (gridMoveTimer > gridMoveTimerMax)
         //conejoVivo = GameObject.FindGameObjectWithTag("comida");
         
-        if (comidaConteiner.transform.childCount == 0)
+        if (comidaConteiner.transform.childCount < cantidadDeComida && finish == false)
         {
-            float x = UnityEngine.Random.Range(0, 25);
-            float y = UnityEngine.Random.Range(0, 20);
+            float x = UnityEngine.Random.Range(1, 25);
+            float y = UnityEngine.Random.Range(1, 20);
             Vector3 position = new Vector3(x, y, 0);
             Quaternion rotacion = new Quaternion(0, 0, 0, 0);
             //for(int i = 0; i < serpiente.GetComponent<Snake>().lista.Count ; i++)
                 //serpiente.GetComponent<Snake>().lista[i].transform.position.x;
             conejoVivo = Instantiate(conejo, position, rotacion);
             conejoVivo.transform.SetParent(comidaConteiner.transform);
-
-            gameObject.GetComponent<Score>().RaiseScore(1);
+            //gameObject.GetComponent<Score>().RaiseScore(1);
         }
 
         if (serpiente == null)
@@ -77,11 +80,14 @@ public class GameHandler : MonoBehaviour
                 TimeHandle();
             }
     }
-
+    public void GoalReached()
+    {
+        finish = true;
+        puerta.GetComponent<Puerta>().Abrir();
+    }
     public void Musica(bool Musica){
         gameObject.GetComponent<AudioSource>().enabled = Musica;
     }
-
     private bool PauseHandle()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -92,7 +98,6 @@ public class GameHandler : MonoBehaviour
             }
         return !gamePause;
     }
-
     private void TimeHandle()
     {
         gridMoveTimer += Time.deltaTime;
@@ -133,7 +138,6 @@ public class GameHandler : MonoBehaviour
             keyQueue.Enqueue(selected.Value);
         }
     }
-
     public void exitOnTickListener(IOnTickListener listener)
     {
         if (listener != null)

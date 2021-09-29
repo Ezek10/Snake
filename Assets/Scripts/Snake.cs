@@ -28,7 +28,6 @@ public class Snake : MonoBehaviour, IOnTickListener
         Sprites();
         HeadRotation();
     }
-
     private void Direccion(Direction nextMove)
     {
         switch (nextMove)
@@ -180,6 +179,7 @@ public class Snake : MonoBehaviour, IOnTickListener
     }
     public void Eat(GameObject Comida)
     {
+        GameObject.Find("GameHandler").GetComponent<Score>().RaiseScore(1);
         Destroy(Comida);
         cuerpoNuevo = true;
         audio.clip = eat;
