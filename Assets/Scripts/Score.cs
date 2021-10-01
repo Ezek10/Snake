@@ -14,6 +14,7 @@ public class Score : MonoBehaviour
     public int goal = 3;
     void Start()
     {
+        texto = GameObject.Find("Score").GetComponent<Text>();
         texto.text = "Score: " + score.ToString() + "\nMaxScore: " + maxScore.ToString();
         maxScore = PlayerPrefs.GetInt("record",-3);
     }

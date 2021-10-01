@@ -39,9 +39,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Nivel 1 - copia (9).unity
     guid: 6e5079311b8e0ab419f342ae529b0f4c
   - enabled: 1
-    path: Assets/Scenes/Nivel 1 - copia (10).unity
-    guid: 602a8c4adec19d945a67d38bdb4e2dcb
-  - enabled: 1
     path: Assets/Scenes/Nivel 2.unity
     guid: 7e2f2bc9eb64fb34f9cb6f9d27ae32c8
   - enabled: 1
@@ -60,9 +57,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Nivel 7.unity
     guid: 3645f1c6d8c419941adbb2d770b62182
   - enabled: 1
-    path: Assets/Scenes/Nivel 9.unity
-    guid: 54483091f6fc6da428b869624d3f8c87
-  - enabled: 1
     path: Assets/Scenes/Nivel 8.unity
     guid: 3e1caa68994d70f4db128f16bce6356b
+  - enabled: 1
+    path: Assets/Scenes/Nivel 9.unity
+    guid: 54483091f6fc6da428b869624d3f8c87
   m_configObjects: {}

@@ -29,7 +29,11 @@ public class GameHandler : MonoBehaviour
         keyQueue.Enqueue(Direction.Right);
         gridMoveTimerMax = .10f;
         gridMoveTimer = gridMoveTimerMax;
-        
+        puerta = GameObject.Find("Puerta");
+        comidaConteiner = GameObject.Find("Comida");
+        pantallaDePausa = GameObject.Find("Pantalla de Pausa");
+        pantallaDePausa.transform.GetChild(0).gameObject.SetActive(true);
+        pantallaDePausa.SetActive(false);
     }
     private void Initiate()
     {

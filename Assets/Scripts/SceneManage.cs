@@ -7,11 +7,12 @@ public class SceneManage : MonoBehaviour
 {
     public void NextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
-        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCount)
-            {
-                Application.Quit();
-                Debug.Log("QUIT");
-            }
+        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings - 1)
+        {
+            Application.Quit();
+            Debug.Log("QUIT");
+        }
+        else
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

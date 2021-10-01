@@ -11,6 +11,7 @@ public class Puerta : MonoBehaviour
         open = false;
         GetComponent<Animator>().SetBool("Abrir", open);
         GetComponent<BoxCollider2D>().isTrigger = true;
+        sceneManager = GameObject.Find("GameHandler");
     }
 
     public void Abrir()
