@@ -66,6 +66,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texto: {fileID: 0}
   goal: 15
+  maxEnable: 0
 --- !u!114 &6235874756124218572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,6 +79,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60077b7ea902a8143b1d039d6ed431b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Niveles: {fileID: 0}
+  nivelActual: 0
 --- !u!82 &6235874756124218573
 AudioSource:
   m_ObjectHideFlags: 0

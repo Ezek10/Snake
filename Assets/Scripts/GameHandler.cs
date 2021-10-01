@@ -89,14 +89,14 @@ public class GameHandler : MonoBehaviour
         finish = true;
         puerta.GetComponent<Puerta>().Abrir();
     }
-    public void Musica(bool Musica){
-        gameObject.GetComponent<AudioSource>().enabled = Musica;
+    public void Finish(){
+        finish = !finish;
     }
     private bool PauseHandle()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
             {
-                pantallaDePausa.SetActive(!pantallaDePausa.active);
+                pantallaDePausa.SetActive(!pantallaDePausa.activeSelf);
                 gamePause = !gamePause;
                 gameObject.GetComponent<AudioSource>().mute = !gameObject.GetComponent<AudioSource>().mute;
             }

@@ -11,32 +11,49 @@ public class Score : MonoBehaviour
     private int maxScore;
     public Text texto;
     private int record;
-    public int goal = 3;
+    public int goal = 15;
+    public bool maxEnable = false;
     void Start()
     {
         texto = GameObject.Find("Score").GetComponent<Text>();
-        texto.text = "Score: " + score.ToString() + "\nMaxScore: " + maxScore.ToString();
-        maxScore = PlayerPrefs.GetInt("record",-3);
+        if (maxEnable)
+        {
+            texto.text = "Score: " + score.ToString() + "\nMaxScore: " + maxScore.ToString();
+            maxScore = PlayerPrefs.GetInt("record",-3);
+        }
+        else
+        {
+            texto.text = "Score: " + score.ToString() + "\nGoal: " + goal.ToString();
+        }
     }
 
     // Update is called once per frame
     public void RaiseScore(int s)
     {
         score += s;
-        if (score > maxScore)
+        if(maxEnable)
         {
-            maxScore = score;
-            PlayerPrefs.SetInt("record",maxScore);
+            if (score > maxScore)
+            {
+                maxScore = score;
+                PlayerPrefs.SetInt("record",maxScore);
+            }
+            texto.text = "Score: " + score.ToString() + "\nMaxScore: " + maxScore.ToString();
         }
-        texto.text = "Score: " + score.ToString() + "\nMaxScore: " + maxScore.ToString();
-        if (score == goal)
-            GetComponent<GameHandler>().GoalReached();
-            
+        else
+        {
+            texto.text = "Score: " + score.ToString() + "\nGoal: " + goal.ToString();
+            if (score == goal)
+                GetComponent<GameHandler>().GoalReached();
+        }
     }
     public void DeleteScore()
     {
         score = 0;
-        texto.text = "Score: " + score.ToString() + "\nMaxScore: " + maxScore.ToString();
+        if (maxEnable)
+            texto.text = "Score: " + score.ToString() + "\nMaxScore: " + maxScore.ToString();
+        else
+            texto.text = "Score: " + score.ToString() + "\nGoal: " + goal.ToString();
     }
 
 }
