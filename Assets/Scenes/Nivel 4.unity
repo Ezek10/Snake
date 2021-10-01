@@ -1621,6 +1621,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6235874756124218573, guid: 91f57acd4f1419b4db55fbd563fa5047,
+        type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6235874756124218577, guid: 91f57acd4f1419b4db55fbd563fa5047,
         type: 3}
       propertyPath: m_Name
@@ -1683,6 +1688,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91f57acd4f1419b4db55fbd563fa5047, type: 3}
+--- !u!82 &210791707 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6235874756124218573, guid: 91f57acd4f1419b4db55fbd563fa5047,
+    type: 3}
+  m_PrefabInstance: {fileID: 210791706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &238428930
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,8 +2449,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: set_enabled
+      - m_Target: {fileID: 210791707}
+        m_MethodName: set_mute
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
