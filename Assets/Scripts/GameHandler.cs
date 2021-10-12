@@ -89,8 +89,13 @@ public class GameHandler : MonoBehaviour
         finish = true;
         puerta.GetComponent<Puerta>().Abrir();
     }
-    public void Finish(){
+    public void Finish(bool dead=false){
         finish = !finish;
+        if (dead)
+        {
+            Debug.Log("MUERTE");
+            Destroy(gameObject);
+        }
     }
     private bool PauseHandle()
     {
