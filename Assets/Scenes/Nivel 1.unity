@@ -8366,24 +8366,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6235874756124218572, guid: 91f57acd4f1419b4db55fbd563fa5047,
         type: 3}
-      propertyPath: Niveles
+      propertyPath: niveles
       value: 
       objectReference: {fileID: 213061258}
-    - target: {fileID: 6235874756124218572, guid: 91f57acd4f1419b4db55fbd563fa5047,
-        type: 3}
-      propertyPath: nivelBase
-      value: 
-      objectReference: {fileID: 836705384}
     - target: {fileID: 6235874756124218572, guid: 91f57acd4f1419b4db55fbd563fa5047,
         type: 3}
       propertyPath: lugares
       value: 
       objectReference: {fileID: 836705384}
-    - target: {fileID: 6235874756124218572, guid: 91f57acd4f1419b4db55fbd563fa5047,
+    - target: {fileID: 6235874756124218576, guid: 91f57acd4f1419b4db55fbd563fa5047,
         type: 3}
-      propertyPath: niveles
-      value: 
-      objectReference: {fileID: 213061258}
+      propertyPath: cantidadDeComida
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6235874756124218577, guid: 91f57acd4f1419b4db55fbd563fa5047,
         type: 3}
       propertyPath: m_Name
@@ -8392,7 +8387,7 @@ PrefabInstance:
     - target: {fileID: 6235874756124218578, guid: 91f57acd4f1419b4db55fbd563fa5047,
         type: 3}
       propertyPath: goal
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6235874756124218579, guid: 91f57acd4f1419b4db55fbd563fa5047,
         type: 3}
@@ -8454,21 +8449,6 @@ PrefabInstance:
       propertyPath: textNivel
       value: 
       objectReference: {fileID: 482248567}
-    - target: {fileID: 7275398601338521295, guid: 91f57acd4f1419b4db55fbd563fa5047,
-        type: 3}
-      propertyPath: niveles
-      value: 
-      objectReference: {fileID: 213061258}
-    - target: {fileID: 7275398601338521295, guid: 91f57acd4f1419b4db55fbd563fa5047,
-        type: 3}
-      propertyPath: formas
-      value: 
-      objectReference: {fileID: 213061258}
-    - target: {fileID: 7275398601338521295, guid: 91f57acd4f1419b4db55fbd563fa5047,
-        type: 3}
-      propertyPath: lugares
-      value: 
-      objectReference: {fileID: 836705384}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91f57acd4f1419b4db55fbd563fa5047, type: 3}
 --- !u!1 &879209874

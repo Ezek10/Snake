@@ -52,7 +52,7 @@ MonoBehaviour:
   comidaConteiner: {fileID: 0}
   puerta: {fileID: 0}
   pantallaDePausa: {fileID: 0}
-  cantidadDeComida: 1
+  cantidadDeComida: 5
 --- !u!114 &6235874756124218578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texto: {fileID: 0}
-  goal: 15
+  goal: 1
   maxEnable: 0
 --- !u!114 &6235874756124218572
 MonoBehaviour:
@@ -80,8 +80,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60077b7ea902a8143b1d039d6ed431b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Niveles: {fileID: 0}
-  nivelActual: 0
+  niveles: {fileID: 0}
+  lugares: {fileID: 0}
 --- !u!114 &7275398601338521295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,8 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03ecb398e2ce9a47b546fcaee3a90db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nivel: {fileID: 0}
-  niveles: {fileID: 0}
+  textNivel: {fileID: 0}
 --- !u!82 &6235874756124218573
 AudioSource:
   m_ObjectHideFlags: 0
